@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_c600638f1448ad4dc20cb1c4c8f9d6f4 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_c600638f1448ad4dc20cb1c4c8f9d6f4" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_c600638f1448ad4dc20cb1c4c8f9d6f4 = L.map(
+                "map_c600638f1448ad4dc20cb1c4c8f9d6f4",
+                {
+                    center: [20.5937, 78.9629],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 5,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_17dac05961f68d763f5e56af2f4ece33 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_17dac05961f68d763f5e56af2f4ece33.addTo(map_c600638f1448ad4dc20cb1c4c8f9d6f4);
+        
+    
+            var circle_marker_ae1b5ae89545379441588e0c6f18fec2 = L.circleMarker(
+                [12.9716, 77.5946],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 18.67290212329177, "stroke": true, "weight": 3}
+            ).addTo(map_c600638f1448ad4dc20cb1c4c8f9d6f4);
+        
+    
+        var popup_e6f9d239f0e4dbe6b1cbc7206c479e1a = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_91789861c94acd12fd1c285e35353833 = $(`<div id="html_91789861c94acd12fd1c285e35353833" style="width: 100.0%; height: 100.0%;">             <b>Bengaluru</b><br>             Annual Rainfall: 934 mm<br>             Avg Temperature: 22.9°C<br>             Avg Humidity: 92%             </div>`)[0];
+                popup_e6f9d239f0e4dbe6b1cbc7206c479e1a.setContent(html_91789861c94acd12fd1c285e35353833);
+            
+        
+
+        circle_marker_ae1b5ae89545379441588e0c6f18fec2.bindPopup(popup_e6f9d239f0e4dbe6b1cbc7206c479e1a)
+        ;
+
+        
+    
+    
+            circle_marker_ae1b5ae89545379441588e0c6f18fec2.bindTooltip(
+                `<div>
+                     Bengaluru: 934 mm/year
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_6435a7cad275c93f0fe76d33d700db65 = L.circleMarker(
+                [13.0827, 80.2707],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 21.12134857270385, "stroke": true, "weight": 3}
+            ).addTo(map_c600638f1448ad4dc20cb1c4c8f9d6f4);
+        
+    
+        var popup_1fb71c20275d6be9d97491d204d4079e = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_86592e5422d06b082e60bf1da37a1c86 = $(`<div id="html_86592e5422d06b082e60bf1da37a1c86" style="width: 100.0%; height: 100.0%;">             <b>Chennai</b><br>             Annual Rainfall: 1056 mm<br>             Avg Temperature: 27.9°C<br>             Avg Humidity: 89%             </div>`)[0];
+                popup_1fb71c20275d6be9d97491d204d4079e.setContent(html_86592e5422d06b082e60bf1da37a1c86);
+            
+        
+
+        circle_marker_6435a7cad275c93f0fe76d33d700db65.bindPopup(popup_1fb71c20275d6be9d97491d204d4079e)
+        ;
+
+        
+    
+    
+            circle_marker_6435a7cad275c93f0fe76d33d700db65.bindTooltip(
+                `<div>
+                     Chennai: 1056 mm/year
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_bc86f0aa3f9f29777b5df7d94ac839d4 = L.circleMarker(
+                [28.6139, 77.209],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13.831512895431398, "stroke": true, "weight": 3}
+            ).addTo(map_c600638f1448ad4dc20cb1c4c8f9d6f4);
+        
+    
+        var popup_be178469448095f1047b055249dda2da = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_f3eae32c5f6906cebc2088abc29a0399 = $(`<div id="html_f3eae32c5f6906cebc2088abc29a0399" style="width: 100.0%; height: 100.0%;">             <b>Delhi</b><br>             Annual Rainfall: 692 mm<br>             Avg Temperature: 24.6°C<br>             Avg Humidity: 80%             </div>`)[0];
+                popup_be178469448095f1047b055249dda2da.setContent(html_f3eae32c5f6906cebc2088abc29a0399);
+            
+        
+
+        circle_marker_bc86f0aa3f9f29777b5df7d94ac839d4.bindPopup(popup_be178469448095f1047b055249dda2da)
+        ;
+
+        
+    
+    
+            circle_marker_bc86f0aa3f9f29777b5df7d94ac839d4.bindTooltip(
+                `<div>
+                     Delhi: 692 mm/year
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_f7b05e6145cd2899ce7d9ebddf7dd9c5 = L.circleMarker(
+                [26.9124, 75.7873],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.894210777042163, "stroke": true, "weight": 3}
+            ).addTo(map_c600638f1448ad4dc20cb1c4c8f9d6f4);
+        
+    
+        var popup_da4268569d0a3c01c476f2ae3da30dfe = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_65c15648129338229cd8c1eef5d0b182 = $(`<div id="html_65c15648129338229cd8c1eef5d0b182" style="width: 100.0%; height: 100.0%;">             <b>Jaipur</b><br>             Annual Rainfall: 545 mm<br>             Avg Temperature: 24.8°C<br>             Avg Humidity: 70%             </div>`)[0];
+                popup_da4268569d0a3c01c476f2ae3da30dfe.setContent(html_65c15648129338229cd8c1eef5d0b182);
+            
+        
+
+        circle_marker_f7b05e6145cd2899ce7d9ebddf7dd9c5.bindPopup(popup_da4268569d0a3c01c476f2ae3da30dfe)
+        ;
+
+        
+    
+    
+            circle_marker_f7b05e6145cd2899ce7d9ebddf7dd9c5.bindTooltip(
+                `<div>
+                     Jaipur: 545 mm/year
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_3dfa5a2fee14dbf46d992b7aa50cd80c = L.circleMarker(
+                [22.5726, 88.3639],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 33.37654342870213, "stroke": true, "weight": 3}
+            ).addTo(map_c600638f1448ad4dc20cb1c4c8f9d6f4);
+        
+    
+        var popup_bd633df2e09496658aca194b6343d658 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_b516be351d97ec5255bf7b6f23f13982 = $(`<div id="html_b516be351d97ec5255bf7b6f23f13982" style="width: 100.0%; height: 100.0%;">             <b>Kolkata</b><br>             Annual Rainfall: 1669 mm<br>             Avg Temperature: 25.9°C<br>             Avg Humidity: 94%             </div>`)[0];
+                popup_bd633df2e09496658aca194b6343d658.setContent(html_b516be351d97ec5255bf7b6f23f13982);
+            
+        
+
+        circle_marker_3dfa5a2fee14dbf46d992b7aa50cd80c.bindPopup(popup_bd633df2e09496658aca194b6343d658)
+        ;
+
+        
+    
+    
+            circle_marker_3dfa5a2fee14dbf46d992b7aa50cd80c.bindTooltip(
+                `<div>
+                     Kolkata: 1669 mm/year
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_d1f3776dd9fa0d6dd9458ce23fdb3deb = L.circleMarker(
+                [19.076, 72.8777],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 39.39830088915339, "stroke": true, "weight": 3}
+            ).addTo(map_c600638f1448ad4dc20cb1c4c8f9d6f4);
+        
+    
+        var popup_c952f2349718edca0cf5ff819358e477 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_856e19681a85013946e9027a9dc397ab = $(`<div id="html_856e19681a85013946e9027a9dc397ab" style="width: 100.0%; height: 100.0%;">             <b>Mumbai</b><br>             Annual Rainfall: 1970 mm<br>             Avg Temperature: 26.6°C<br>             Avg Humidity: 88%             </div>`)[0];
+                popup_c952f2349718edca0cf5ff819358e477.setContent(html_856e19681a85013946e9027a9dc397ab);
+            
+        
+
+        circle_marker_d1f3776dd9fa0d6dd9458ce23fdb3deb.bindPopup(popup_c952f2349718edca0cf5ff819358e477)
+        ;
+
+        
+    
+    
+            circle_marker_d1f3776dd9fa0d6dd9458ce23fdb3deb.bindTooltip(
+                `<div>
+                     Mumbai: 1970 mm/year
+                 </div>`,
+                {"sticky": true}
+            );
+        
+</script>
+</html>
