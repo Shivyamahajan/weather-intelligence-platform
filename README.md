@@ -32,22 +32,25 @@ Transform the prediction system into an intelligent AI assistant with LLMs, RAG,
 
 ---
 
-## Project Structure
+## 📁 Project Structure
+
+```text
 weather-intelligence-platform/
 ├── data/
-│   ├── raw/           # Raw downloaded weather data
-│   ├── processed/     # Cleaned and feature-engineered data
-│   └── external/      # Satellite data, shapefiles
-├── notebooks/         # Jupyter notebooks for EDA and experiments
+│   ├── raw/
+│   ├── processed/
+│   └── external/
+├── notebooks/
 ├── src/
-│   ├── data_collection/   # Data download scripts
-│   ├── preprocessing/     # Cleaning and feature engineering
-│   ├── models/            # ML/DL model training
-│   └── visualization/     # Plotting utilities
+│   ├── data_collection/
+│   ├── preprocessing/
+│   ├── models/
+│   └── visualization/
 ├── reports/
-│   └── figures/           # Generated plots and visualizations
+│   └── figures/
 ├── requirements.txt
 └── README.md
+```
 
 ---
 
