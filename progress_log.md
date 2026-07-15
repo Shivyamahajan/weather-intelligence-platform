@@ -47,3 +47,76 @@
 - Build baseline ML models (Linear Regression, Random Forest, XGBoost)
 - Implement time-series models (ARIMA, SARIMA, Prophet)
 - Start model evaluation and comparison
+
+# Week 02 – Day 1 (14 July 2026)
+
+## Objective
+Build and compare machine learning models for daily rainfall prediction using the processed weather dataset.
+
+## Work Completed
+- Implemented baseline models:
+  - Zero Baseline
+  - Persistence Baseline
+  - Monthly Average Baseline
+- Evaluated baseline models using MAE, RMSE, MAPE, and R².
+- Developed a complete machine learning training pipeline.
+- Trained and evaluated the following regression models:
+  - Linear Regression
+  - Ridge Regression
+  - Lasso Regression
+  - Decision Tree Regressor
+  - Random Forest Regressor
+  - Extra Trees Regressor
+  - XGBoost Regressor
+  - LightGBM Regressor
+  - Support Vector Regressor (SVR)
+  - KNN Regressor
+- Used a time-based train-test split to prevent data leakage.
+- Applied RobustScaler for models requiring feature scaling.
+- Performed 5-fold cross-validation for model evaluation.
+- Saved all trained models using Joblib.
+- Generated model comparison visualizations and prediction plots.
+
+## Key Results
+### Baseline Models
+| Model | RMSE | R² |
+|-------|------|------|
+| Zero Baseline | 15.1567 | -0.1452 |
+| Persistence Baseline | 11.9018 | 0.2939 |
+| Monthly Average Baseline | 12.0860 | 0.2718 |
+
+### Best Machine Learning Models
+| Model | RMSE | R² |
+|-------|------|------|
+| XGBoost | **8.0609** | **0.7477** |
+| LightGBM | 8.0782 | 0.7466 |
+| Random Forest | 8.1114 | 0.7445 |
+
+## Observations
+- Tree-based ensemble models significantly outperformed linear regression models.
+- XGBoost achieved the best prediction accuracy.
+- The trained ML models substantially improved upon all baseline models.
+- Model artifacts and evaluation reports were successfully generated for future use.
+
+## Files Created
+- src/models/baseline_models.py
+- src/models/train_ml_models.py
+- reports/baseline_results.csv
+- reports/ml_model_results.csv
+- reports/figures/model_comparison.png
+- reports/figures/predictions_vs_actual.png
+- models/*.pkl
+
+## Week 02 – Day 2 (July 15)
+
+- Performed SHAP explainability analysis on the Random Forest rainfall prediction model.
+- Generated SHAP feature importance bar chart and SHAP summary plot.
+- Exported feature importance rankings to `reports/shap_feature_importance.csv`.
+
+### Key Findings
+
+- Evapotranspiration was the most influential feature for rainfall prediction.
+- Previous day's rainfall (precipitation_mm_lag_1) was one of the strongest predictors, showing temporal dependence.
+- Rolling rainfall statistics over the previous week improved predictive performance.
+- Wind speed, humidity, cloud cover, and seasonal features also contributed to rainfall prediction.
+- SHAP analysis improved model interpretability by explaining how individual features influenced predictions.
