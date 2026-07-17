@@ -120,3 +120,36 @@ Build and compare machine learning models for daily rainfall prediction using th
 - Rolling rainfall statistics over the previous week improved predictive performance.
 - Wind speed, humidity, cloud cover, and seasonal features also contributed to rainfall prediction.
 - SHAP analysis improved model interpretability by explaining how individual features influenced predictions.
+
+# Week 02 – Day 3 (16 July 2026)
+
+## Objective
+Develop and evaluate time series forecasting models for monthly rainfall prediction.
+
+## Work Completed
+- Aggregated daily rainfall data into monthly totals.
+- Implemented Prophet forecasting model.
+- Implemented Seasonal ARIMA (SARIMA) forecasting model.
+- Used monthly rainfall from 1990–2021 for training and 2022–2024 for testing.
+- Evaluated models using MAE, RMSE, and R².
+- Generated forecast comparison plots and Prophet component visualizations.
+
+## Results
+
+| Model | RMSE | R² |
+|-------|------|------|
+| Prophet | 134.08 | 0.8227 |
+| SARIMA | 135.82 | 0.8180 |
+
+## Observations
+- Prophet achieved the best forecasting accuracy.
+- Both models successfully captured yearly monsoon seasonality.
+- Prophet automatically modeled long-term trend and seasonal effects.
+- Monthly forecasting provides interpretable long-term rainfall predictions.
+
+## Files Created
+- src/models/time_series_models.py
+- reports/time_series_results.csv
+- reports/figures/prophet_forecast.png
+- reports/figures/prophet_components.png
+- reports/figures/sarima_forecast.png
