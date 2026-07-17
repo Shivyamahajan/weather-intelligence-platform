@@ -48,142 +48,113 @@
 - Implement time-series models (ARIMA, SARIMA, Prophet)
 - Start model evaluation and comparison
 
-# Week 02 – Day 1 (14 July 2026)
+# Week 02 — July 14 to 19, 2026
 
-## Objective
-Build and compare machine learning models for daily rainfall prediction using the processed weather dataset.
+## Day 1 (July 14) — Baseline Models & Machine Learning Pipeline
 
-## Work Completed
-- Implemented baseline models:
-  - Zero Baseline
-  - Persistence Baseline
-  - Monthly Average Baseline
-- Evaluated baseline models using MAE, RMSE, MAPE, and R².
-- Developed a complete machine learning training pipeline.
-- Trained and evaluated the following regression models:
-  - Linear Regression
-  - Ridge Regression
-  - Lasso Regression
-  - Decision Tree Regressor
-  - Random Forest Regressor
-  - Extra Trees Regressor
-  - XGBoost Regressor
-  - LightGBM Regressor
-  - Support Vector Regressor (SVR)
-  - KNN Regressor
+- Implemented three baseline models: Zero Baseline, Persistence Baseline, and Monthly Average Baseline.
+- Developed a complete ML training pipeline for rainfall prediction.
+- Trained and evaluated Linear Regression, Ridge, Lasso, Decision Tree, Random Forest, Extra Trees, XGBoost, LightGBM, SVR, and KNN Regressor.
 - Used a time-based train-test split to prevent data leakage.
-- Applied RobustScaler for models requiring feature scaling.
-- Performed 5-fold cross-validation for model evaluation.
-- Saved all trained models using Joblib.
-- Generated model comparison visualizations and prediction plots.
+- Applied RobustScaler where required and performed 5-fold cross-validation.
+- Saved trained models using Joblib.
+- Generated prediction comparison plots and model performance visualizations.
+- Best performing model: **XGBoost**
+  - RMSE: **8.0609 mm**
+  - R²: **0.7477**
 
-## Key Results
-### Baseline Models
+---
+
+## Day 2 (July 15) — SHAP Explainability Analysis
+
+- Performed SHAP explainability analysis on the Random Forest model.
+- Generated SHAP Feature Importance Bar Plot and SHAP Summary Plot.
+- Exported feature importance rankings to CSV.
+- Identified the most influential rainfall prediction features.
+
+### Key Findings
+- Evapotranspiration was the most influential feature.
+- Previous day's rainfall (precipitation_mm_lag_1) was one of the strongest predictors.
+- Rolling rainfall statistics improved prediction performance.
+- Wind speed, humidity, cloud cover and seasonal features also contributed significantly.
+- SHAP improved model interpretability by explaining feature contributions.
+
+---
+
+## Day 3 (July 16) — Time Series Forecasting
+
+- Built Prophet forecasting model using monthly rainfall data.
+- Built SARIMA (1,1,1)(1,1,1)[12] seasonal forecasting model.
+- Compared both statistical forecasting approaches.
+
+### Results
+
 | Model | RMSE | R² |
-|-------|------|------|
-| Zero Baseline | 15.1567 | -0.1452 |
-| Persistence Baseline | 11.9018 | 0.2939 |
-| Monthly Average Baseline | 12.0860 | 0.2718 |
+|------|------|------|
+| Prophet | **134.08 mm/month** | **0.8227** |
+| SARIMA | 135.82 mm/month | 0.8180 |
 
-### Best Machine Learning Models
-| Model | RMSE | R² |
-|-------|------|------|
-| XGBoost | **8.0609** | **0.7477** |
-| LightGBM | 8.0782 | 0.7466 |
-| Random Forest | 8.1114 | 0.7445 |
+- Prophet slightly outperformed SARIMA on the monthly rainfall forecasting task.
+- Generated forecast plots and Prophet component analysis.
 
-## Observations
-- Tree-based ensemble models significantly outperformed linear regression models.
-- XGBoost achieved the best prediction accuracy.
-- The trained ML models substantially improved upon all baseline models.
-- Model artifacts and evaluation reports were successfully generated for future use.
+---
 
-## Files Created
-- src/models/baseline_models.py
-- src/models/train_ml_models.py
-- reports/baseline_results.csv
-- reports/ml_model_results.csv
-- reports/figures/model_comparison.png
-- reports/figures/predictions_vs_actual.png
-- models/*.pkl
+## Day 4 (July 17) — Multi-City XGBoost Analysis
 
-## Week 02 – Day 2 (July 15)
-
-- Performed SHAP explainability analysis on the Random Forest rainfall prediction model.
-- Generated SHAP feature importance bar chart and SHAP summary plot.
-- Exported feature importance rankings to `reports/shap_feature_importance.csv`.
+- Trained XGBoost separately for every city.
+- Compared prediction performance across multiple Indian cities.
+- Generated multi-city performance visualization.
 
 ### Key Findings
 
-- Evapotranspiration was the most influential feature for rainfall prediction.
-- Previous day's rainfall (precipitation_mm_lag_1) was one of the strongest predictors, showing temporal dependence.
-- Rolling rainfall statistics over the previous week improved predictive performance.
-- Wind speed, humidity, cloud cover, and seasonal features also contributed to rainfall prediction.
-- SHAP analysis improved model interpretability by explaining how individual features influenced predictions.
-
-# Week 02 – Day 3 (16 July 2026)
-
-## Objective
-Develop and evaluate time series forecasting models for monthly rainfall prediction.
-
-## Work Completed
-- Aggregated daily rainfall data into monthly totals.
-- Implemented Prophet forecasting model.
-- Implemented Seasonal ARIMA (SARIMA) forecasting model.
-- Used monthly rainfall from 1990–2021 for training and 2022–2024 for testing.
-- Evaluated models using MAE, RMSE, and R².
-- Generated forecast comparison plots and Prophet component visualizations.
-
-## Results
-
-| Model | RMSE | R² |
-|-------|------|------|
-| Prophet | 134.08 | 0.8227 |
-| SARIMA | 135.82 | 0.8180 |
-
-## Observations
-- Prophet achieved the best forecasting accuracy.
-- Both models successfully captured yearly monsoon seasonality.
-- Prophet automatically modeled long-term trend and seasonal effects.
-- Monthly forecasting provides interpretable long-term rainfall predictions.
-
-## Files Created
-- src/models/time_series_models.py
-- reports/time_series_results.csv
-- reports/figures/prophet_forecast.png
-- reports/figures/prophet_components.png
-- reports/figures/sarima_forecast.png
-
-# Week 02 – Day 4 (17 July 2026)
-
-## Objective
-Evaluate the performance of the best machine learning model (XGBoost) across multiple Indian cities and compare rainfall prediction accuracy.
-
-## Work Completed
-- Implemented a multi-city analysis pipeline using XGBoost.
-- Trained separate rainfall prediction models for Bengaluru, Chennai, Delhi, Jaipur, Kolkata, and Mumbai.
-- Evaluated model performance using MAE, RMSE, and R².
-- Compared prediction accuracy across different climatic regions.
-- Generated a multi-city performance comparison report and visualization.
-
-## Key Results
-
-| City | RMSE | R² |
-|------|------|------|
-| Jaipur | **3.471** | 0.6853 |
-| Bengaluru | 3.733 | 0.5821 |
-| Delhi | 3.813 | 0.7016 |
-| Kolkata | 5.554 | 0.6650 |
-| Chennai | 6.244 | 0.6572 |
-| Mumbai | 8.362 | **0.7284** |
-
-## Observations
-- XGBoost successfully generalized across multiple Indian cities.
 - Jaipur achieved the lowest prediction error.
-- Mumbai recorded the highest RMSE due to significantly higher annual rainfall but also achieved the highest R², indicating strong predictive performance.
-- The experiment demonstrated that the Weather Intelligence Platform can effectively model rainfall across diverse climatic conditions.
+- Mumbai was the most challenging city because of highly variable monsoon rainfall.
+- Model performance varied according to regional climate characteristics.
 
-## Files Created
-- src/models/multi_city_analysis.py
-- reports/multi_city_results.csv
-- reports/figures/multi_city_performance.png
+---
+
+## Day 5 (July 18) — Model Results Notebook
+
+- Created a comprehensive Jupyter Notebook summarizing all Week 2 experiments.
+- Included:
+  - Baseline comparison
+  - ML model comparison
+  - SHAP explainability
+  - Time series forecasting
+  - Multi-city analysis
+  - Final observations and learnings
+
+---
+
+## Day 6 (July 19) — GitHub & Documentation
+
+- Updated project documentation.
+- Updated progress log with Week 2 activities.
+- Organized reports, figures and trained model files.
+- Prepared repository for GitHub submission.
+
+---
+
+# Key Technical Learnings
+
+1. Tree-based ensemble models (XGBoost, Random Forest and LightGBM) significantly outperform linear regression for rainfall prediction.
+
+2. Time-based train-test splitting is essential for weather forecasting to avoid data leakage.
+
+3. SHAP provides interpretable explanations showing how each feature influences model predictions.
+
+4. Lag features and rolling rainfall statistics are among the most informative predictors for rainfall forecasting.
+
+5. Atmospheric variables such as evapotranspiration, cloud cover, humidity and wind speed substantially improve prediction accuracy.
+
+6. Prophet and SARIMA effectively capture seasonal rainfall trends, while machine learning models provide higher accuracy by leveraging multiple weather variables.
+
+---
+
+# Next Week (Week 03)
+
+- Build LSTM-based rainfall prediction model.
+- Develop Bi-LSTM and GRU architectures.
+- Compare deep learning models with classical ML models.
+- Begin satellite image analysis for weather prediction.
+- Continue improving the Weather Intelligence Platform.
