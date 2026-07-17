@@ -153,3 +153,37 @@ Develop and evaluate time series forecasting models for monthly rainfall predict
 - reports/figures/prophet_forecast.png
 - reports/figures/prophet_components.png
 - reports/figures/sarima_forecast.png
+
+# Week 02 – Day 4 (17 July 2026)
+
+## Objective
+Evaluate the performance of the best machine learning model (XGBoost) across multiple Indian cities and compare rainfall prediction accuracy.
+
+## Work Completed
+- Implemented a multi-city analysis pipeline using XGBoost.
+- Trained separate rainfall prediction models for Bengaluru, Chennai, Delhi, Jaipur, Kolkata, and Mumbai.
+- Evaluated model performance using MAE, RMSE, and R².
+- Compared prediction accuracy across different climatic regions.
+- Generated a multi-city performance comparison report and visualization.
+
+## Key Results
+
+| City | RMSE | R² |
+|------|------|------|
+| Jaipur | **3.471** | 0.6853 |
+| Bengaluru | 3.733 | 0.5821 |
+| Delhi | 3.813 | 0.7016 |
+| Kolkata | 5.554 | 0.6650 |
+| Chennai | 6.244 | 0.6572 |
+| Mumbai | 8.362 | **0.7284** |
+
+## Observations
+- XGBoost successfully generalized across multiple Indian cities.
+- Jaipur achieved the lowest prediction error.
+- Mumbai recorded the highest RMSE due to significantly higher annual rainfall but also achieved the highest R², indicating strong predictive performance.
+- The experiment demonstrated that the Weather Intelligence Platform can effectively model rainfall across diverse climatic conditions.
+
+## Files Created
+- src/models/multi_city_analysis.py
+- reports/multi_city_results.csv
+- reports/figures/multi_city_performance.png
