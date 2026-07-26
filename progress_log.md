@@ -158,3 +158,65 @@
 - Compare deep learning models with classical ML models.
 - Begin satellite image analysis for weather prediction.
 - Continue improving the Weather Intelligence Platform.
+
+## Week 03 — July 20 to 25, 2026
+
+### Day 1 (July 20) — LSTM / BiLSTM / GRU Deep Learning
+- Understood concept of sequences vs flat feature tables
+- Built LSTM model with 128→64 units, Dropout, EarlyStopping
+- Built Bidirectional LSTM (reads sequences forward + backward)
+- Built GRU model (simpler alternative to LSTM)
+- Used Huber loss (better than MSE for skewed rainfall data)
+- EarlyStopping prevented overfitting automatically
+
+### Day 2 (July 21) — CNN Satellite Image Classification
+- Downloaded/created cloud image dataset with 4 categories
+- Built CNN from scratch (Conv2D → BatchNorm → MaxPool blocks)
+- Built Transfer Learning model with MobileNetV2 pretrained on ImageNet
+- Applied data augmentation (rotation, flip, zoom, brightness)
+- Transfer learning significantly outperformed CNN from scratch
+
+### Day 3 (July 22) — Complete Model Comparison
+- Built master comparison across ALL models from Weeks 2 and 3
+- Documented key findings and personal observations
+- Identified best model overall and per category
+
+### Day 4 (July 23) — FastAPI Backend
+- Built REST API with FastAPI
+- Endpoints: /health, /cities, /predict/rainfall, /weather/current
+- Pydantic validation for all inputs
+- Live weather fetching from Open-Meteo API
+- Automatic Swagger docs at localhost:8000/docs
+
+### Day 5 (July 24) — Streamlit Frontend
+- Built 5-page web application in pure Python
+- Dashboard: live current weather
+- Prediction: interactive rainfall forecasting
+- Historical Analysis: city rainfall trends
+- Model Performance: comparison charts
+- About: project documentation
+
+### Day 6 (July 25) — Docker + GitHub
+- Created Dockerfile and docker-compose.yml
+- Pushed all Week 3 code to GitHub
+- Updated documentation
+
+### Key Technical Learnings This Week
+1. LSTM sequences reshape how you think about input — 
+   instead of one row, you feed a window of time
+2. Transfer learning is remarkably powerful — MobileNetV2 
+   achieved better accuracy on cloud images despite being 
+   trained on completely different images (everyday objects)
+3. FastAPI auto-generates Swagger UI — this is genuinely 
+   impressive and made testing much faster
+4. Streamlit lets you build real web apps in pure Python — 
+   the barrier between data science and web development has
+   almost disappeared with tools like this
+5. EarlyStopping is essential for deep learning — 
+   without it models overfit quickly
+
+### Next Week (July 28 — August 1)
+- Complete final evaluation and model selection
+- Start writing research paper in Overleaf (LaTeX)
+- Begin learning about RAG and LangChain for Part 02
+- Finalize GitHub repository documentation
