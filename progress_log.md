@@ -43,10 +43,7 @@
 4. Cyclical encoding of months (sin/cos) is better than treating month as a plain number
 5. Extreme rainfall events across India appear to be increasing — a signal of climate change
 
-### Next Week Plan (July 14–18)
-- Build baseline ML models (Linear Regression, Random Forest, XGBoost)
-- Implement time-series models (ARIMA, SARIMA, Prophet)
-- Start model evaluation and comparison
+
 
 # Week 02 — July 14 to 19, 2026
 
@@ -215,8 +212,3 @@
 5. EarlyStopping is essential for deep learning — 
    without it models overfit quickly
 
-### Next Week (July 28 — August 1)
-- Complete final evaluation and model selection
-- Start writing research paper in Overleaf (LaTeX)
-- Begin learning about RAG and LangChain for Part 02
-- Finalize GitHub repository documentation
