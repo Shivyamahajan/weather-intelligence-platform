@@ -1,0 +1,48 @@
+
+FINAL MODEL SELECTION REPORT
+Weather Intelligence Platform — Mumbai
+Generated: 2026-07-27 12:02
+=================================================================
+
+EVALUATION CRITERIA:
+1. Overall RMSE (prediction accuracy on test set)
+2. Monsoon season RMSE (performance when it matters most)
+3. Inference speed (production usability)
+4. Interpretability (explainability with SHAP)
+
+RESULTS SUMMARY:
+Best Overall RMSE:    XGBoost — 8.0609 mm
+Best Monsoon RMSE:    Extra Trees — 12.9475 mm
+Fastest Inference:    Linear Regression — 0.45 ms
+
+SELECTED MODEL: XGBoost
+
+JUSTIFICATION:
+- Achieved lowest overall RMSE on 4+ years of held-out test data
+- Performed well during monsoon season (critical for India)
+- Inference speed is acceptable for real-time API use
+- SHAP analysis showed interpretable feature importance
+- No evidence of severe overfitting (train/test gap acceptable)
+- Handles non-linear relationships in rainfall data effectively
+- No data scaling required (unlike SVR, KNN, Linear models)
+
+FULL RESULTS TABLE:
+            Model         Category          MAE         RMSE            R2  Monsoon_RMSE    Monsoon_R2  Extreme_RMSE  Inference_ms  Mean_Residual
+          XGBoost Machine Learning 2.656100e+00 8.060900e+00  7.477000e-01  1.299550e+01  6.665000e-01  5.073670e+01          6.47   6.417000e-01
+         LightGBM Machine Learning 2.732000e+00 8.078200e+00  7.466000e-01  1.306470e+01  6.629000e-01  4.816070e+01         13.79   6.086000e-01
+    Random Forest Machine Learning 2.608700e+00 8.111400e+00  7.445000e-01  1.304630e+01  6.639000e-01  4.994140e+01         66.66   6.415000e-01
+      Extra Trees Machine Learning 2.621000e+00 8.126100e+00  7.436000e-01  1.294750e+01  6.689000e-01  5.263690e+01         48.49   5.468000e-01
+    Decision Tree Machine Learning 2.949300e+00 9.111300e+00  6.776000e-01  1.475750e+01  5.699000e-01  4.865930e+01          0.84   5.099000e-01
+ Lasso Regression Machine Learning 6.396800e+00 1.710130e+01 -1.358000e-01  2.631750e+01 -3.678000e-01  7.494920e+01          0.55   3.818700e+00
+ Ridge Regression Machine Learning 6.461100e+00 1.731890e+01 -1.649000e-01  2.832670e+01 -5.847000e-01  1.033935e+02          0.46   6.182400e+00
+Linear Regression Machine Learning 5.472050e+14 9.853558e+14 -3.770701e+27  1.635559e+15 -5.282973e+27  1.945346e+15          0.45  -5.472050e+14
+
+CONCLUSION:
+The selected model will be used as the primary prediction engine
+in the FastAPI backend. The model file is saved at:
+models/xgboost.pkl
+
+For research paper: This model selection follows established
+practices in meteorological ML literature where ensemble
+tree-based methods consistently outperform linear and single
+tree models on weather prediction tasks.

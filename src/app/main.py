@@ -27,6 +27,13 @@ import os
 from datetime import datetime, date
 from typing import Optional, List
 import requests
+import time
+import sys
+
+sys.path.append('.')
+
+from src.utils.logger import app_logger
+from src.utils.prediction_tracker import PredictionTracker
 
 # ─── Initialize App ───
 app = FastAPI(
@@ -44,6 +51,7 @@ app = FastAPI(
     """,
     version="1.0.0"
 )
+tracker = PredictionTracker()
 
 # Allow requests from Streamlit frontend
 app.add_middleware(
@@ -247,35 +255,33 @@ async def get_cities():
 
 @app.post("/predict/rainfall", response_model=PredictionResponse)
 async def predict_rainfall(request: PredictionRequest):
-    """
-    Predict daily rainfall for a given city and date.
-    
-    Send a POST request with weather features and get back
-    a predicted rainfall amount with category and confidence.
-    """
+    start_time = time.perf_counter()  # Start timing
+
     if model is None:
+        app_logger.error("Prediction attempted but model not loaded")
         raise HTTPException(
             status_code=503,
             detail="Model not loaded. Please train the model first."
         )
-    
+
     if request.city not in CITIES:
+        app_logger.warning(f"Unknown city requested: {request.city}")
         raise HTTPException(
             status_code=400,
             detail=f"City '{request.city}' not supported. "
                    f"Available: {list(CITIES.keys())}"
         )
-    
+
     try:
         features = build_features(request)
         prediction = float(np.clip(model.predict(features)[0], 0, None))
-        
+
         category, confidence = classify_rainfall(prediction)
-        
+
         date_obj = pd.Timestamp(request.date)
         is_monsoon = date_obj.month in [6, 7, 8, 9]
-        
-        return PredictionResponse(
+
+        response = PredictionResponse(
             city=request.city,
             date=request.date,
             predicted_rainfall_mm=round(prediction, 2),
@@ -285,8 +291,21 @@ async def predict_rainfall(request: PredictionRequest):
             model_used="XGBoost Regressor",
             prediction_time=datetime.now().isoformat()
         )
-    
+
+        # Track prediction
+        elapsed_ms = (time.perf_counter() - start_time) * 1000
+        tracker.log(response.model_dump() | request.model_dump(), elapsed_ms)
+
+        # Write to log
+        app_logger.info(
+            f"Prediction | {request.city} | {request.date} | "
+            f"{prediction:.2f} mm | {category} | {elapsed_ms:.1f} ms"
+        )
+
+        return response
+
     except Exception as e:
+        app_logger.error(f"Prediction error: {str(e)}")
         raise HTTPException(status_code=500, detail=str(e))
 
 
