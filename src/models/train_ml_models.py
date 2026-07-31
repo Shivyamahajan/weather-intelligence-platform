@@ -147,6 +147,9 @@ def load_and_prepare_data():
     print(f"Records after dropping NaN: {len(city_df):,}")
     
     # Features and target
+    print("\n===== Feature Statistics =====")
+    print(city_df[available_features].describe().T)
+
     X = city_df[available_features].values
     y = city_df[TARGET_COL].values
     dates = city_df['date'].values
@@ -175,6 +178,24 @@ def load_and_prepare_data():
     scaler  = RobustScaler()
     X_train_scaled = scaler.fit_transform(X_train)
     X_test_scaled  = scaler.transform(X_test)
+    print("\n===== Checking Scaled Data =====")
+    print("NaN in X_train_scaled:", np.isnan(X_train_scaled).sum())
+    print("Inf in X_train_scaled:", np.isinf(X_train_scaled).sum())
+
+    print("NaN in y_train:", np.isnan(y_train).sum())
+    print("Inf in y_train:", np.isinf(y_train).sum())
+
+    print("Largest value:", np.max(X_train))
+    print("Smallest value:", np.min(X_train))
+
+    print("Largest scaled:", np.max(X_train_scaled))
+    print("Smallest scaled:", np.min(X_train_scaled))
+
+    print("\n===== Checking Target =====")
+    print("NaN in y_train :", np.isnan(y_train).sum())
+    print("Inf in y_train :", np.isinf(y_train).sum())
+    print("Max rainfall   :", np.max(y_train))
+    print("Min rainfall   :", np.min(y_train))
     
     return (X_train, X_test, X_train_scaled, X_test_scaled,
             y_train, y_test, dates_test, available_features, scaler)
@@ -312,6 +333,9 @@ def train_and_evaluate_all(X_train, X_test, X_train_scaled, X_test_scaled,
             X_te = X_test
         
         # Train the model
+        if model_name == "Linear Regression":
+            print("Training shape:", X_tr.shape)
+            print("Testing shape :", X_te.shape)
         model.fit(X_tr, y_train)
         
         # Make predictions
@@ -473,7 +497,7 @@ if __name__ == "__main__":
     results_df = pd.DataFrame(all_results)
     os.makedirs("reports", exist_ok=True)
     results_df.to_csv("reports/ml_model_results.csv", index=False)
-    
+    results_df.to_csv("reports/final_evaluation.csv", index=False)    
     # Print final comparison
     print("\n" + "=" * 60)
     print("FINAL TEST SET COMPARISON")
