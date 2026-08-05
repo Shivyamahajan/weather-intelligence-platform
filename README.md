@@ -2,9 +2,10 @@
 
 **MacroEdtech GenAI Research Internship | Phase 02 | July–August 2026**
 
-**Author:** Shivya  
-**Mentor:** Sagar Sakalley, MacroEdtech  
-**Project Period:** July–August 2026
+Author: Shivya Mahajan
+Mentor: Sagar Sakalley
+Organization: MacroEdtech GenAI Research Internship
+Project Period: July–August 2026
 
 ---
 
@@ -19,6 +20,18 @@ The platform integrates:
 - **Large Language Models (LLMs)** for intelligent weather assistance
 - **RAG (Retrieval-Augmented Generation)** for knowledge retrieval
 - **AI Agents** for autonomous weather analysis workflows
+
+---
+
+## 🏆 Best Model Performance
+
+The rainfall prediction models were evaluated using MAE, RMSE, and R² on the test dataset.
+
+| Model | MAE | RMSE | R² |
+|------|------:|------:|------:|
+| XGBoost | 2.6561 | 8.0609 | 0.7477 |
+
+XGBoost achieved the best overall performance and was selected as the final prediction model for deployment.
 
 ---
 
@@ -99,13 +112,56 @@ jupyter notebook notebooks/01_EDA.ipynb
 
 ---
 
-## 📈 Week 01 Progress (July 7–11)
+## 📅 Project Progress
 
-- [x] Environment setup (Python, VS Code, Git, virtual environment)
-- [x] GitHub repository created and structured
-- [x] Historical weather data collected (1990–2024, 6 cities, 76,704 records)
-- [x] Exploratory data analysis (EDA) completed
-- [x] Feature engineering pipeline built
-- [ ] ML model development (Week 2)
-- [ ] Deep learning models (Week 3)
-- [ ] Application development (Week 4)
+✅ Week 1
+- Data collection using Open-Meteo API
+- Exploratory Data Analysis
+- Feature Engineering
+
+✅ Week 2
+- Linear Regression
+- Ridge Regression
+- Lasso Regression
+- Decision Tree
+- Random Forest
+- Extra Trees
+- XGBoost
+- LightGBM
+- Model Evaluation
+- SHAP Explainability
+
+✅ Week 3
+- LSTM
+- BiLSTM
+- GRU
+- CNN
+- FastAPI Backend
+- Streamlit Dashboard
+- Docker Integration
+
+✅ Week 4
+- Research Paper
+- Documentation
+- Final Deployment
+
+## 📷 Project Outputs
+
+### Research Framework
+
+![Framework](reports/figures/framework.png)
+
+### SHAP Feature Importance
+
+![SHAP Bar](reports/figures/shap_importance_bar.png)
+
+### SHAP Summary Plot
+
+![SHAP Summary](reports/figures/shap_summary_dot.png)
+
+
+## 📄 Research Paper
+
+The complete research paper is available here:
+
+[📘 Weather Intelligence Platform Research Paper](docs/paper.pdf)
