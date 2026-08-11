@@ -35,3 +35,15 @@ ipykernel==6.29.0
 # Utilities
 python-dotenv==1.0.0
 tqdm==4.66.1
+
+# Libraries
+langchain
+langchain-community
+langchain-ollama
+chromadb
+faiss-cpu
+sentence-transformers
+pypdf
+python-docx
+ollama
+tiktoken

@@ -1,0 +1,45 @@
+WEATHER INTELLIGENCE PLATFORM — MODEL RESULTS SUMMARY
+
+Project: AI-Based Weather Prediction for Indian Southwest Monsoon
+Author: Shivya
+Internship: MacroEdtech GenAI Research Internship 2026
+Phase: 02 — Part 01
+
+Data Collected:
+- [your actual data period]
+- [your actual cities]
+- [your actual number of records]
+- [your actual variables]
+
+Feature Engineering:
+- Lag features: ...
+- Rolling statistics: ...
+- Cyclical encoding: ...
+- Other features: ...
+
+Models Trained and Compared:
+- Linear Regression
+- Ridge Regression
+- Lasso Regression
+- Random Forest
+- XGBoost
+- LightGBM
+- LSTM
+- BiLSTM
+- GRU
+- etc.
+
+Best Model:
+- XGBoost
+- RMSE: 8.0609 mm
+- R²: 0.7477
+
+Explainability:
+- SHAP analysis was performed
+- [your actual top features from your SHAP results]
+
+Application:
+- FastAPI
+- Streamlit
+- Docker
+- GitHub

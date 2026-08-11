@@ -1,0 +1,37 @@
+INDIAN SOUTHWEST MONSOON — SCIENTIFIC BACKGROUND
+
+Definition:
+The Indian Southwest Monsoon is a seasonal reversal of wind direction
+that brings moisture-laden air from the Arabian Sea and Bay of Bengal
+over the Indian subcontinent, typically from June to September.
+
+Mechanism:
+1. During summer (May-June), the Indian landmass heats up rapidly
+2. This creates a low-pressure zone over northwest India
+3. The cooler ocean (high pressure) drives moist air toward land
+4. As moist air rises over land, it cools and condenses into rainfall
+
+Onset and Withdrawal:
+- Normal onset over Kerala: June 1
+- Normal onset over Mumbai: June 10
+- Normal onset over Delhi: June 29
+- Normal withdrawal from northwest India: September 1
+- Complete withdrawal from India: October 15
+
+Key Climate Indices Affecting Monsoon:
+- El Nino Southern Oscillation (ENSO): El Nino years typically
+  bring below-normal monsoon rainfall over India
+- Indian Ocean Dipole (IOD): Positive IOD generally enhances
+  monsoon rainfall over India
+- Pacific Decadal Oscillation (PDO)
+- Madden-Julian Oscillation (MJO): Controls active/break cycles
+
+Active and Break Monsoon Periods:
+- Active period: above-normal rainfall, strong winds
+- Break period: below-normal rainfall, dry conditions over plains
+
+Climate Change Impacts on Indian Monsoon:
+- Increasing intensity of extreme rainfall events
+- More variable onset and withdrawal dates
+- Increasing frequency of floods and droughts
+- Sea surface temperature changes affecting monsoon strength
