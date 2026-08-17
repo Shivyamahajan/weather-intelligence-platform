@@ -1,0 +1,44 @@
+WAIA — Weather AI Assistant
+Session: 2026-08-16 23:29:13.735962
+============================================================
+
+[23:29:29] 👤 User:
+What is considered heavy rainfall in India?
+
+[23:29:51] 🤖 WAIA:
+According to the IMD classification used in this project, heavy rainfall is 64.5–115.5 mm in 24 hours.
+Sources: imd_rainfall_classification.txt, monsoon_science.txt
+
+[23:29:51] 👤 User:
+What about in the context of Mumbai specifically?
+
+[23:30:06] 🤖 WAIA:
+In the context of Mumbai, heavy rainfall is classified as 64.5 mm or more in 24 hours.
+Sources: imd_rainfall_classification.txt, weather_model_results.txt, monsoon_science.txt
+
+[23:30:06] 👤 User:
+What precautions should people take?
+
+[23:30:26] 🤖 WAIA:
+In the context of Mumbai, heavy rainfall is classified as 64.5 mm or more in 24 hours. People should be prepared for potential flooding, landslides, and other water-related hazards. It is advisable to stay indoors, avoid driving, and ensure that essential supplies are available.
+Sources: weather_model_results.txt, imd_rainfall_classification.txt
+
+[23:30:26] 👤 User:
+Can you remind me what rainfall category we were discussing?
+
+[23:30:55] 🤖 WAIA:
+The IMD rainfall categories used in the project are:
+- Light rainfall
+- Moderate rainfall
+- Heavy rainfall
+- Very heavy rainfall
+- Extremely heavy rainfall
+Sources: weather_model_results.txt, imd_rainfall_classification.txt
+
+[23:30:55] 👤 User:
+Explain what a predicted rainfall of 185.0mm in Mumbai on 2026-08-07 means for residents. What should they prepare for?
+
+[23:31:13] 🤖 WAIA:
+A predicted rainfall of 185.0mm in Mumbai on 2026-08-07 indicates a very heavy rainfall event. This falls into the IMD category of "Very Heavy Rain." Residents should prepare for potential flooding, landslides, and other water-related hazards. It is advisable to stay indoors, avoid driving, and ensure that essential supplies are available.
+Sources: weather_model_results.txt, imd_rainfall_classification.txt
+

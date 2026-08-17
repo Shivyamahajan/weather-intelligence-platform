@@ -212,3 +212,70 @@
 5. EarlyStopping is essential for deep learning — 
    without it models overfit quickly
 
+## Week 05 — August 3 to 7, 2026
+
+### Day 1 (August 3) — Ollama Setup + First LLM Interaction
+
+- Installed Ollama and configured Qwen2.5:1.5b for local LLM inference
+- Installed LangChain, ChromaDB, and sentence-transformers libraries
+- Tested the local LLM through Ollama and Python
+- Built the first LangChain chain (prompt → LLM → parser)
+- Observed that an LLM without RAG can hallucinate specific rainfall data
+
+### Day 2 (August 4) — Knowledge Base Construction
+
+- Collected 3 text documents for the knowledge base:
+  IMD rainfall classification, monsoon science, and project results
+- Built document loading pipeline using TextLoader and PyPDFLoader
+- Implemented RecursiveCharacterTextSplitter with 500-character chunks and 50-character overlap
+- Created HuggingFace embeddings using all-MiniLM-L6-v2 with 384 dimensions
+- Built and persisted ChromaDB vector store
+- Tested retrieval with multiple sample queries and verified relevant chunks were returned
+
+### Day 3 (August 5) — RAG Pipeline
+
+- Built the complete WeatherRAGPipeline class
+- Implemented retrieve → format context → prompt → generate flow
+- Created structured RAGResponse dataclass with timing metrics
+- Tested the pipeline with multiple weather questions
+- Integrated ML prediction data into RAG prompts
+
+### Day 4 (August 6) — Conversational Assistant
+
+- Added ConversationBufferWindowMemory with a 5-exchange window
+- Built a conversational prompt that includes previous conversation history
+- Implemented explain_prediction() to integrate ML predictions with the LLM
+- Added conversation saving to text files
+- Tested multi-turn conversations and verified that memory works correctly
+
+### Day 5 (August 7) — Integration + GitHub
+
+- Built the Part 02 demo notebook (04_Part02_RAG_Demo.ipynb)
+- Compared RAG and No-RAG responses using multiple weather questions
+- Demonstrated conversational memory across multiple turns
+- Integrated Part 01 ML predictions with the GenAI assistant
+- Fixed the ChromaDB path configuration for notebook execution
+- Verified the RAG pipeline using the 14-chunk weather knowledge base
+- Prepared Part 02 Week 1 work for GitHub
+
+### Key Technical Learnings This Week
+
+1. Temperature setting affects LLM response behaviour — lower temperature
+   values such as 0.1 are more suitable for factual responses.
+
+2. Chunk size affects retrieval quality — chunks that are too small may
+   lose context, while very large chunks may reduce retrieval precision.
+
+3. Embedding model choice matters — all-MiniLM-L6-v2 provides a good
+   balance between speed and semantic retrieval quality for this project.
+
+4. RAG provides access to project-specific knowledge by retrieving relevant
+   document chunks before generating the answer.
+
+5. Conversation memory makes interactions more natural by preserving
+   previous turns, but increases prompt length and therefore has a
+   production performance tradeoff.
+
+6. Local LLM inference with Qwen2.5:1.5b through Ollama allows the
+   application to operate without relying on a paid external LLM API.
+

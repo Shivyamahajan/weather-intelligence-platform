@@ -9,14 +9,16 @@ Description:
     daily rainfall prediction (regression task).
     
     Models trained:
-    1. Linear Regression (baseline linear model)
-    2. Ridge Regression (linear with L2 regularisation)
-    3. Lasso Regression (linear with L1 regularisation)
+    1. Linear Regression
+    2. Ridge Regression
+    3. Lasso Regression
     4. Decision Tree Regressor
     5. Random Forest Regressor
-    6. XGBoost Regressor
-    7. LightGBM Regressor
-    8. Support Vector Regression (SVR)
+    6. Extra Trees Regressor
+    7. XGBoost Regressor
+    8. LightGBM Regressor
+    9. Support Vector Regression (SVR)
+    10. KNN Regressor
 """
 
 import pandas as pd

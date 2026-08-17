@@ -120,10 +120,10 @@ def split_documents(documents):
     (overlap prevents losing context at chunk boundaries)
     """
     splitter = RecursiveCharacterTextSplitter(
-        chunk_size=500,
-        chunk_overlap=50,
-        length_function=len,
-        separators=["\n\n", "\n", ". ", " ", ""]
+    chunk_size=800,
+    chunk_overlap=100,
+    length_function=len,
+    separators=["\n\n", "\n", ". ", " ", ""]
     )
     
     chunks = splitter.split_documents(documents)
@@ -211,12 +211,13 @@ def test_retrieval(vector_store):
     This verifies that relevant chunks are being retrieved.
     """
     test_queries = [
-        "What is heavy rainfall classification by IMD?",
-        "When does the Southwest Monsoon arrive in Mumbai?",
-        "What precautions should be taken during heavy rain?",
-        "Which model performed best for rainfall prediction?",
-        "What is El Nino's effect on Indian monsoon?",
-    ]
+    "What is heavy rainfall classification by IMD?",
+    "When does the Southwest Monsoon arrive in Mumbai?",
+    "What precautions should be taken during heavy rain?",
+    "Which model performed best for rainfall prediction?",
+    "What are the rainfall prediction models used in the weather prediction system?",
+    "What is El Nino's effect on Indian monsoon?",
+]
     
     print("\n" + "="*60)
     print("KNOWLEDGE BASE RETRIEVAL TEST")
@@ -227,7 +228,7 @@ def test_retrieval(vector_store):
         print("─"*50)
         
         # Retrieve top 2 most relevant chunks
-        results = vector_store.similarity_search(query, k=2)
+        results = vector_store.similarity_search(query, k=3)
         
         for i, doc in enumerate(results):
             print(f"Result {i+1} (from {doc.metadata.get('source','?')}):")

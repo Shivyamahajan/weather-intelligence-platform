@@ -1,0 +1,69 @@
+============================================================
+QUICK REFERENCE — IMD RAINFALL CLASSIFICATION
+============================================================
+
+Question: What rainfall amount is considered heavy rainfall
+according to IMD?
+
+Answer:
+According to the IMD classification used in this project,
+heavy rainfall is 64.5–115.5 mm in 24 hours.
+
+Question: What rainfall amount is considered very heavy rainfall?
+
+Answer:
+Very heavy rainfall is 115.6–204.4 mm in 24 hours.
+
+Question: What rainfall amount is considered extremely heavy
+rainfall?
+
+Answer:
+Extremely heavy rainfall is 204.5 mm or more in 24 hours.
+
+Question: What are the IMD rainfall categories?
+
+Answer:
+The rainfall intensity categories used in the project are:
+- Light rainfall
+- Moderate rainfall
+- Heavy rainfall
+- Very heavy rainfall
+- Extremely heavy rainfall
+
+============================================================
+
+INDIA METEOROLOGICAL DEPARTMENT — RAINFALL CLASSIFICATION
+
+Daily Rainfall Classification (mm per day):
+- No Rain: 0 - 2.4 mm
+- Very Light Rain: 2.5 - 7.4 mm
+- Light Rain: 7.5 - 35.4 mm
+- Moderate Rain: 35.5 - 64.4 mm
+- Rather Heavy Rain: 64.5 - 115.5 mm
+- Heavy Rain: 115.6 - 204.4 mm
+- Very Heavy Rain: 204.5 - 244.4 mm
+- Extremely Heavy Rain: More than 244.5 mm
+
+Weekly Rainfall Categories:
+- Excess: more than 60% above normal
+- Large Excess: more than 60% below normal
+- Normal: -19% to +19% of normal
+- Deficient: -20% to -59% below normal
+- Large Deficient: more than 60% below normal
+
+Southwest Monsoon Season: June to September
+Northeast Monsoon Season (Tamil Nadu/Andhra): October to December
+Pre-Monsoon Season: March to May
+Winter Season: January to February
+
+Key Facts:
+- India receives about 75-90% of its annual rainfall during 
+  the Southwest Monsoon season (June-September)
+- Average annual rainfall across India: approximately 1200mm
+- Western Ghats and Northeast India receive the highest rainfall
+- Rajasthan and parts of Gujarat receive the lowest rainfall
+
+Warnings Issued by IMD:
+- Yellow Warning: Heavy Rainfall expected (64.5 - 115.5 mm)
+- Orange Warning: Very Heavy Rainfall expected (115.6 - 204.4 mm)
+- Red Warning: Extremely Heavy Rainfall expected (>204.4 mm)

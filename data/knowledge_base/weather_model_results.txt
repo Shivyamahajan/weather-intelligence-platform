@@ -1,3 +1,55 @@
+============================================================
+QUICK REFERENCE — WEATHER PREDICTION MODELS
+============================================================
+
+Question: What are the rainfall prediction models used in the
+weather prediction system?
+
+Answer:
+The weather prediction system uses multiple machine learning,
+time-series, and deep learning models for rainfall prediction.
+
+Machine Learning Models:
+- Linear Regression
+- Ridge Regression
+- Lasso Regression
+- Random Forest
+- Extra Trees
+- Decision Tree
+- XGBoost
+- LightGBM
+- KNN Regressor
+- Support Vector Regression (SVR)
+
+Time-Series Models:
+- SARIMA
+- Prophet
+
+Deep Learning Models:
+- LSTM
+- Bidirectional LSTM
+- GRU
+
+Question: Which ML model performed best for rainfall prediction?
+
+Answer:
+XGBoost performed best among the compared machine learning models,
+with an RMSE of 8.0609 mm and an R² score of 0.7477.
+
+Question: What was the RMSE of XGBoost?
+
+Answer:
+The XGBoost rainfall prediction model achieved an RMSE of
+8.0609 mm.
+
+Question: What was the R² score of XGBoost?
+
+Answer:
+The XGBoost rainfall prediction model achieved an R² score of
+0.7477.
+
+============================================================
+
 WEATHER INTELLIGENCE PLATFORM — MODEL RESULTS SUMMARY
 
 Project: AI-Based Weather Prediction for Indian Southwest Monsoon
@@ -5,41 +57,160 @@ Author: Shivya
 Internship: MacroEdtech GenAI Research Internship 2026
 Phase: 02 — Part 01
 
-Data Collected:
-- [your actual data period]
-- [your actual cities]
-- [your actual number of records]
-- [your actual variables]
+============================================================
+DATASET
+============================================================
 
-Feature Engineering:
-- Lag features: ...
-- Rolling statistics: ...
-- Cyclical encoding: ...
-- Other features: ...
+Data Sources:
+- Open-Meteo Historical Weather API
+- ERA5 Reanalysis Dataset from Copernicus Climate Data Store
 
-Models Trained and Compared:
+Geographical Coverage:
+- Mumbai, Maharashtra
+- Kolkata, West Bengal
+- Chennai, Tamil Nadu
+- Bengaluru, Karnataka
+- Delhi, Delhi NCT
+- Hyderabad, Telangana
+- Pune, Maharashtra
+- Jaipur, Rajasthan
+
+Study Period:
+- 1990–2024
+
+Primary Prediction Target:
+- Daily precipitation sum (mm)
+
+Meteorological Variables:
+- Daily precipitation
+- Maximum temperature
+- Minimum temperature
+- Mean temperature
+- Maximum relative humidity
+- Maximum wind speed
+- Dominant wind direction
+- Surface pressure
+- Mean cloud cover
+
+Mumbai Training Dataset:
+- Records: 12,784
+- Features used for training: 30
+
+============================================================
+FEATURE ENGINEERING
+============================================================
+
+Lag Features:
+- Rainfall lag: 1 day
+- Rainfall lag: 2 days
+- Rainfall lag: 3 days
+- Rainfall lag: 7 days
+- Rainfall lag: 14 days
+- Rainfall lag: 30 days
+
+Rolling Statistics:
+- 7-day rolling statistics
+- 14-day rolling statistics
+- 30-day rolling statistics
+- 90-day rolling statistics
+
+Cyclical Seasonal Encoding:
+- Sine encoding of month
+- Cosine encoding of month
+
+Purpose:
+- Capture rainfall persistence
+- Capture recent atmospheric conditions
+- Represent seasonal and monsoon patterns
+
+============================================================
+MODELS IMPLEMENTED
+============================================================
+
+Baseline Models:
+- Zero-prediction baseline
+- Persistence baseline
+- Monthly average baseline
+
+Machine Learning Models:
 - Linear Regression
 - Ridge Regression
 - Lasso Regression
 - Random Forest
+- Extra Trees
+- Decision Tree
 - XGBoost
 - LightGBM
+- KNN Regressor
+- Support Vector Regression (SVR)
+
+Time-Series Models:
+- SARIMA
+- Prophet
+
+Deep Learning Models:
 - LSTM
-- BiLSTM
+- Bidirectional LSTM
 - GRU
-- etc.
 
-Best Model:
-- XGBoost
-- RMSE: 8.0609 mm
-- R²: 0.7477
+============================================================
+FINAL TEST SET RESULTS
+============================================================
 
-Explainability:
-- SHAP analysis was performed
-- [your actual top features from your SHAP results]
+Model                  RMSE       R²
+------------------------------------------------------------
+XGBoost                8.0609     0.7477
+LightGBM               8.0782     0.7466
+Random Forest           8.1114     0.7445
+Extra Trees              8.1261     0.7436
+Decision Tree             9.1113     0.6776
+Linear Regression         9.7102     0.6338
+Ridge Regression          9.7113     0.6337
+Lasso Regression          9.8832     0.6207
+KNN Regressor            10.0735     0.6059
+SVR                       10.2440     0.5925
 
-Application:
+============================================================
+BEST MODEL
+============================================================
+
+Best Model: XGBoost
+
+Test RMSE: 8.0609 mm
+Test R²: 0.7477
+
+XGBoost achieved the lowest RMSE and highest R² among the
+compared machine learning models.
+
+============================================================
+EXPLAINABILITY
+============================================================
+
+SHAP analysis was performed on the XGBoost rainfall prediction
+model.
+
+Important predictive features identified through SHAP analysis
+include:
+- Recent rainfall history / lag features
+- Cloud cover
+- Seasonal encoding
+
+============================================================
+APPLICATION
+============================================================
+
+Backend:
 - FastAPI
+
+Frontend:
 - Streamlit
+
+Deployment:
 - Docker
-- GitHub
+
+Version Control:
+- Git / GitHub
+
+The platform integrates data collection, preprocessing,
+machine learning prediction, explainability, visualization,
+and API-based model inference.
