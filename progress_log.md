@@ -279,3 +279,76 @@
 6. Local LLM inference with Qwen2.5:1.5b through Ollama allows the
    application to operate without relying on a paid external LLM API.
 
+## Week 06 — August 10 to 15, 2026
+
+### Day 1 (August 10) — LCEL Chains
+- Rebuilt the RAG pipeline using LangChain Expression Language (LCEL).
+- Implemented Basic RAG, Structured Output, and Multi-Step Reasoning chains.
+- Used RunnableParallel and RunnableLambda to compose different processing steps.
+- Structured output was implemented using Pydantic models.
+- Key learning: LCEL makes AI pipelines composable, reusable, and easier to maintain.
+
+### Day 2 (August 11) — Advanced Retrieval
+- Implemented advanced retrieval strategies including MMR,
+  Multi-Query Retrieval, and Contextual Compression.
+- MMR balances relevance and diversity when retrieving documents.
+- Multi-Query Retrieval generates alternative query variations
+  to improve document coverage.
+- Contextual Compression extracts the most relevant information
+  from retrieved chunks.
+- Compared retrieval strategies to understand their strengths and limitations.
+
+### Day 3 (August 12) — Tool Calling
+- Defined 5 tools using the @tool decorator:
+  predict_rainfall, get_current_weather, classify_rainfall_imd,
+  search_knowledge_base, and get_city_monsoon_stats.
+- Built a ManualToolOrchestrator where the LLM selects an appropriate tool.
+- Connected the tools with the existing ML prediction model,
+  weather data, knowledge base, and historical statistics.
+- Tested individual tools and verified their outputs.
+- Key learning: tool calling connects LLM reasoning with real executable functions.
+
+### Day 4 (August 13) — LangGraph Agent
+- Built a WeatherAgent using LangGraph for multi-step reasoning.
+- Implemented the agent loop: decide → extract parameters →
+  call tool → observe result → decide again → synthesize.
+- Tested the agent with complex weather questions requiring multiple tools.
+- Verified that the agent can call tools such as current weather
+  and historical monsoon statistics sequentially.
+- max_iterations=4 was used to prevent infinite agent loops.
+
+### Day 5 (August 14) — Streamlit Integration
+- Built genai_interface.py containing three GenAI UI components:
+  RAG Chat, Weather AI Agent, and Tool Tester.
+- Integrated the RAG pipeline into the Streamlit application.
+- Integrated the LangGraph Weather Agent into the Streamlit application.
+- Added an interactive Tool Tester for testing individual weather tools.
+- Tested the WAIA RAG Chat and verified document retrieval and source display.
+- Tested the Weather AI Agent and verified multi-tool execution and final responses.
+
+### Day 6 (August 15) — GitHub + Review
+- Reviewed the Week 6 implementation and Streamlit integration.
+- Tested the major GenAI components through the Streamlit interface.
+- Committed the completed Week 6 implementation.
+- Pushed the Week 6 code to GitHub.
+- Updated the project progress documentation.
+
+### Key Technical Learnings This Week
+
+1. LCEL makes complex AI pipelines more readable, composable,
+   and maintainable.
+
+2. Advanced retrieval techniques such as MMR, Multi-Query Retrieval,
+   and Contextual Compression can improve the quality and relevance
+   of retrieved context.
+
+3. Tool calling allows an LLM to interact with executable functions
+   instead of only generating text.
+
+4. LangGraph enables multi-step agent workflows where the next action
+   can depend on the result of previous tool calls.
+
+5. Integrating GenAI components into Streamlit makes the underlying
+   RAG and agent capabilities accessible through an interactive UI.
+
+
