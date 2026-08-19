@@ -9,6 +9,15 @@ What is Streamlit?
     No HTML, no CSS, no JavaScript needed.
     You write Python and it automatically becomes a web page.
 """
+import sys
+import os
+
+PROJECT_ROOT = os.path.abspath(
+    os.path.join(os.path.dirname(__file__), "../..")
+)
+
+if PROJECT_ROOT not in sys.path:
+    sys.path.insert(0, PROJECT_ROOT)
 
 import streamlit as st
 import requests
@@ -19,6 +28,14 @@ import plotly.express as px
 import plotly.graph_objects as go
 from datetime import datetime, date
 import json
+
+
+# ─── GenAI Components ───
+from src.app.genai_interface import (
+    render_rag_chat_page,
+    render_agent_page,
+    render_tool_tester_page
+)
 
 # ─── Page Configuration ───
 st.set_page_config(
@@ -112,16 +129,65 @@ def main():
     # Sidebar navigation
     st.sidebar.title("Navigation")
     page = st.sidebar.radio(
-        "Select Page",
-        ["🏠 Dashboard",
-         "🌧️ Rainfall Prediction",
-         "📊 Historical Analysis",
-         "🔬 Model Performance",
-         "ℹ️ About"]
-    )
+    "Select Page",
+    [
+        "🌧️ Dashboard",
+        "🌧️ Rainfall Prediction",
+        "📊 Historical Analysis",
+        "🔬 Model Performance",
+        "🤖 WAIA RAG Chat",
+        "🧠 Weather AI Agent",
+        "🔧 Tool Tester",
+        "ℹ️ About"
+    ]
+)
+
+            # ─── GENAI PAGES ───
+
+    if page == "🤖 WAIA RAG Chat":
+
+        try:
+            from src.genai.rag_pipeline import WeatherRAGPipeline
+            from src.genai.conversational_assistant import (
+                ConversationalWeatherAssistant
+            )
+
+            rag_pipeline = WeatherRAGPipeline()
+            assistant = ConversationalWeatherAssistant()
+
+            render_rag_chat_page(
+                rag_pipeline,
+                assistant
+            )
+
+        except Exception as e:
+            st.error(f"Could not initialize RAG system: {e}")
+            st.exception(e)
+
+    elif page == "🧠 Weather AI Agent":
+
+        try:
+            from src.genai.langgraph_agent import WeatherAgent
+
+            agent = WeatherAgent(max_iterations=4)
+
+            render_agent_page(agent)
+
+        except Exception as e:
+            st.error(f"Could not initialize Weather AI Agent: {e}")
+
+    elif page == "🔧 Tool Tester":
+
+        try:
+            render_tool_tester_page()
+
+        except Exception as e:
+            st.error(f"Could not initialize Tool Tester: {e}")
+
+    # ─── EXISTING PAGES CONTINUE BELOW ───
     
     # ── PAGE 1: Dashboard ──
-    if page == "🏠 Dashboard":
+    elif page == "🏠 Dashboard":
         st.subheader("Current Weather — Live Data")
         
         cities = ["Mumbai", "Delhi", "Chennai",
