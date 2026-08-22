@@ -164,4 +164,6 @@ jupyter notebook notebooks/01_EDA.ipynb
 
 The complete research paper is available here:
 
-[📘 Weather Intelligence Platform Research Paper](docs/paper.pdf)
+[Weather_Intelligence_Platform___MacroEdtech_Research_2026.pdf](https://github.com/user-attachments/files/31331179/Weather_Intelligence_Platform___MacroEdtech_Research_2026.pdf)
+
+
