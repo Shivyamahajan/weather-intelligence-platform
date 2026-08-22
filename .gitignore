@@ -6,3 +6,4 @@ __pycache__/
 data/raw/
 venv/
 .DS_Store
+data/vector_db/
